@@ -34,4 +34,8 @@ URL = 'https://naver.com/'
 browser.get(URL)
 browser.implicitly_wait(10) # 요소가 로드될 때까지 최대 10초간 기다림
 
+########################################################################
+
+browser.find_element(By.XPATH, '//*[@id="account"]/div/a').click()
+
 time.sleep(3) # 3초간 명시적으로 대기
