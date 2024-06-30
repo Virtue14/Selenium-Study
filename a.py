@@ -36,6 +36,18 @@ browser.implicitly_wait(10) # 요소가 로드될 때까지 최대 10초간 기�
 
 ########################################################################
 
-browser.find_element(By.XPATH, '//*[@id="account"]/div/a').click()
+# 메일 값 획득
+temp = browser.find_element(By.XPATH, '//*[@id="shortcutArea"]/ul/li[1]/a/span[2]').text
+print(temp)
 
+# 만약 조금 상위 레벨에서 진행
+temp = browser.find_element(By.XPATH, '//*[@id="shortcutArea"]/ul/li[1]/a').text
+print(temp)
+
+# send_keys
+browser.find_element(By.XPATH, '//*[@id="query"]').send_keys('aaaaaa')
+time.sleep(5)
+
+# 버튼 클릭
+browser.find_element(By.XPATH, '//*[@id="account"]/div/a').click()
 time.sleep(3) # 3초간 명시적으로 대기
